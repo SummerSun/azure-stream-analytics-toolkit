@@ -1,0 +1,90 @@
+{
+  "name": "azure-stream-anlytics-toolkit",
+  "displayName": "Azure Stream Anlytics ToolKit",
+  "description": "Manage your azure stream anlytics jobs.",
+  "version": "0.0.1",
+  "publisher": "Qing",
+  "engines": {
+    "vscode": "^1.5.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:streamanalytics.jobs",
+    "onCommand:streamanalytics.jobs.start",
+    "onCommand:streamanalytics.jobs.monitor",
+    "onCommand:streamanalytics.jobs.stop",
+    "onCommand:streamanalytics.jobs.delete"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "streamanalytics.jobs",
+        "title": "retrieve stream analytics job(s)"
+      },
+      {
+        "command": "streamanalytics.jobs.start",
+        "title": "start stream analytics job(s)"
+      },
+      {
+        "command": "streamanalytics.jobs.monitor",
+        "title": "monitor stream anlytics running job(s)"
+      },
+      {
+        "command": "streamanalytics.jobs.stop",
+        "title": "stop stream analytics jobs"
+      },
+      {
+        "command": "streamanalytics.jobs.delete",
+        "title": "delete stream analytics jobs"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "streamanalytics.jobs",
+          "group": "azure-stream-anlytics-toolkit"
+        },
+        {
+          "command": "streamanalytics.jobs.start",
+          "group": "azure-stream-anlytics-toolkit"
+        },
+        {
+          "command": "streamanalytics.jobs.monitor",
+          "group": "azure-stream-anlytics-toolkit"
+        },
+        {
+          "command": "streamanalytics.jobs.stop",
+          "group": "azure-stream-anlytics-toolkit"
+        },
+        {
+          "command": "streamanalytics.jobs.delete",
+          "group": "azure-stream-anlytics-toolkit"
+        }
+      ]
+    }
+  },
+  "configurations": {
+    "type": "object",
+    "title": "",
+    "properties": {}
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "typescript": "^2.0.3",
+    "vscode": "^1.0.0",
+    "mocha": "^2.3.3",
+    "@types/node": "^6.0.40",
+    "@types/mocha": "^2.2.32"
+  },
+  "dependencies": {
+    "request": "^2.79.0"
+  }
+}
